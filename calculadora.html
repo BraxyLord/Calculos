@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        Body{
+            font-family: sans-serif;
+            background-color:antiquewhite;
+        }
+        .calculadora{
+            background-color:rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 70px;
+            border-radius: 2%;
+            color: white;
+        }
+        input{
+            padding:15px;
+            border: none;
+            outline: none;
+            font-size:15px;
+            width: 100%;
+        }
+     button{
+        background-color: dodgerblue;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 15px;
+        margin-top:20px;
+        cursor:pointer;
+         
+     }
+    button:hover{
+        background-color: deepskyblue;
+        
+    }
+    #resultado {
+            color: lightgreen;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <h1>calculadora</h1>
+        <input type="number" class="N1" placeholder="Digite um numero" id="n1-soma">
+        <br> <br>
+       <input type="number" class="N2" placeholder="Digite outro numero" id="n2-soma">
+       <button onclick="somar()">somar</button>
+       <p id="resultado"></p>
+
+
+    <script>
+        function somar(){
+    var N1 = parseFloat (document.getElementById('n1-soma').value) ;
+    var N2 = parseFloat (document.getElementById('n2-soma').value);
+   
+  
+    if (isNaN(N1) || isNaN(N2)){
+     alert("Digite numeros validos!");
+     return;
+   }
+    resultado = N1 + N2;
+   document.getElementById('resultado').innerText = " Resultado =  " +resultado;
+   if (resultado > 10000000000000000000000000000000) {
+             alert("O resultado é muito grande!");
+         } 
+         
+        }
+    </script>
+
+    
+    </div>
+</body>
+</html> 
